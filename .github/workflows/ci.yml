@@ -29,12 +29,12 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
-      - name: Wait for MySQL service to be ready
-        run: |
-          while ! mysqladmin ping -hlocalhost --silent; do
-              sleep 1
-          done
-        timeout-minutes: 5
+      # - name: Wait for MySQL service to be ready
+      #   run: |
+      #     while ! mysqladmin ping -hlocalhost --silent; do
+      #         sleep 1
+      #     done
+      #   timeout-minutes: 5
 
       - name: Build with Maven
         run: mvn -B package --file pom.xml
