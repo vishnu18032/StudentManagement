@@ -9,16 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    # services:
-      # mysql:
-      #   image: mysql:latest
-      #   env:
-      #     MYSQL_ROOT_PASSWORD: root
-      #     MYSQL_DATABASE: Vishnu@123
-      #   ports:
-      #     - 3306:3306
-      #   options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -28,13 +18,6 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
-
-      # - name: Wait for MySQL service to be ready
-      #   run: |
-      #     while ! mysqladmin ping -hlocalhost --silent; do
-      #         sleep 1
-      #     done
-      #   timeout-minutes: 5
 
       - name: Build with Maven
         run: mvn -B package --file pom.xml
