@@ -21,5 +21,8 @@ jobs:
         architecture: 'x64'
     - name: Build with Maven
       run: ./mvnw clean package -DskipTests
-    # - name: Run tests
-    #   run: ./mvnw test
+    - name: Upload JAR file as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: target/*.jar
