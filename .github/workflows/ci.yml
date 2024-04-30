@@ -20,6 +20,6 @@ jobs:
         distribution: 'adopt'
         architecture: 'x64'
     - name: Build with Maven
-      run: ./mvnw clean -DskipTests
+      run: ./mvnw clean package -DskipTests
     # - name: Run tests
     #   run: ./mvnw test
