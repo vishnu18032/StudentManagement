@@ -23,9 +23,9 @@ jobs:
       run: |
         ./mvnw clean package -DskipTests
         # Create the deploy directory if it doesn't exist
-        mkdir -p deploy
+        #mkdir -p deploy
         # Move the JAR file to the deploy directory
-        mv target/StudentManagement-0.0.1-SNAPSHOT.jar deploy/
+        #mv target/StudentManagement-0.0.1-SNAPSHOT.jar deploy/
     - name: Upload JAR file as artifact
       uses: actions/upload-artifact@v2
       with:
